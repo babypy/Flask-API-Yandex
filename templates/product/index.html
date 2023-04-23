@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Working with products{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <section>
+    <h2>POST - Creating a new product category</h2>
+    <form method="post" action="/api/product/category">
+    <label for="authorization">JSON Authorization</label>
+    <textarea name="authorization" id="authorization" required>
+    {
+      "password": "'123745'",
+      "login": "'127355456'"
+    }
+    </textarea>
+    <label for="category">JSON Category</label>
+    <textarea name="new_category" id="category" required>
+    {
+      "category": "'панамы'"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>POST - Deleting a product category</h2>
+    <form method="post" action="/api/product/delete_category">
+    <label for="authorization1">JSON Authorization</label>
+    <textarea name="authorization" id="authorization1" required>
+    {
+      "password": "'123745'",
+      "login": "'127355456'"
+    }
+    </textarea>
+    <label for="delete">JSON Category</label>
+    <textarea name="category" id="delete" required>
+    {
+      "category": "'панамы'"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>POST - Adding a new product</h2>
+    <form method="post" action="/api/product/product">
+    <label for="authorization2">JSON Authorization</label>
+    <textarea name="authorization" id="authorization2" required>
+    {
+      "password": "'123745'",
+      "login": "'127355456'"
+    }
+    </textarea>
+    <label for="product">JSON Product</label>
+    <textarea name="new_product" id="product" required>
+    {
+        "title": "платье",
+        "id_category": "1",
+        "information": "красивое",
+        "price": "7989"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>POST - Removing a product</h2>
+    <form method="post" action="/api/product/delete_product">
+    <label for="authorization3">JSON Authorization</label>
+    <textarea name="authorization" id="authorization3" required>
+    {
+      "password": "'123745'",
+      "login": "'127355456'"
+    }
+    </textarea>
+    <label for="delete_product">JSON Product id</label>
+    <textarea name="id_product" id="delete_product" required>
+    {
+        "id": "2"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>GET - Getting product information</h2>
+    <form method="get" action="/api/product/get_product">
+    <label for="get_product">JSON Product id</label>
+    <textarea name="id_product" id="get_product" required>
+    {
+        "id": "2"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+{% endblock %}

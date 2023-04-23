@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Changing a user profile{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <section>
+    <h2>POST - Editing a Profile Description</h2>
+    <form method="post" action="/api/user/description">
+    <label for="authorization">JSON Authorization</label>
+    <textarea name="authorization" id="authorization" required>
+    {
+      "password": "'123745'",
+      "login": "'127355456'"
+    }
+    </textarea>
+    <label for="description">JSON Description</label>
+    <textarea name="description" id="description" required>
+    {
+        "description": "'я хороший предприниматель'"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>POST - Changing basic user information</h2>
+    <form method="post" action="/api/user/info">
+    <label for="authorization1">JSON Authorization</label>
+    <textarea name="authorization" id="authorization1" required>
+    {
+      "password": "'123745'",
+      "login": "'127355456'"
+    }
+    </textarea>
+    <label for="info">JSON Info</label>
+    <textarea name="info" id="info" required>
+    {
+        "name": "София",
+        "email": "sofyafedoseeva801@gmail.com",
+        "username": "sofyafed",
+        "city": "Липецк",
+        "login": "976310987097",
+        "phone": "8710987509710970597"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>POST - Password change</h2>
+    <form method="post" action="/api/user/password">
+    <label for="authorization2">JSON Authorization</label>
+    <textarea name="authorization" id="authorization2" required>
+    {
+      "password": "'123745'",
+      "login": "'127355456'"
+    }
+    </textarea>
+    <label for="password">JSON Password</label>
+    <textarea name="new_password" id="password" required>
+    {
+        "password": "3948571"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>POST - Avatar change</h2>
+    <form method="post" action="/api/user/avatar">
+    <label for="authorization3">JSON Authorization</label>
+    <textarea name="authorization" id="authorization3" required>
+    {
+      "password": "'123745'",
+      "login": "'127355456'"
+    }
+    </textarea>
+    <label for="avatar">JSON Avatar</label>
+    <textarea name="new_avatar" id="avatar" required>
+   {
+        "avatar": "984750197"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Auth{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <section>
+    <h2>POST - User Registration</h2>
+    <form method="post" action="/api/auth/signup">
+    <label for="registration">JSON Registration</label>
+    <textarea name="register_user" id="registration" required>
+    {
+        "name": "'Уильям'",
+        "email": "'sem5i59on98@gmail.com'",
+        "username": "'golden_sam'",
+        "city": "'Москва'",
+        "password": "'1465234235'",
+        "login": "'32234626'",
+        "phone": "892346342266",
+        "avatar": "'-'",
+        "description": "'классный'"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>GET - User authentication</h2>
+    <form method="get" action="/api/auth/authenticate">
+    <label for="authenticate">JSON Authentication</label>
+    <textarea name="authenticate_user" id="authenticate" required>
+    {
+        "login": "'123478'"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>GET - Getting User Information</h2>
+    <form method="get" action="/api/auth/information">
+    <label for="information">JSON uid</label>
+    <textarea name="get_user_info" id="information" required>
+    {
+        "uid": "562"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+<section>
+    <h2>DELETE - Deleting a user</h2>
+    <form method="post" action="/api/auth/delete">
+    <label for="deleting">JSON uid</label>
+    <textarea name="delete_user" id="deleting" required>
+    {
+        "uid": "562"
+    }
+    </textarea>
+    <input type="submit" value="Send">
+  </form>
+      </section>
+
+{% endblock %}
